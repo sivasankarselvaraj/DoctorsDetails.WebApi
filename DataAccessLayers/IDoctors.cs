@@ -8,7 +8,7 @@ namespace DataAccessLayers
 {
     public interface IDoctors
     {
-        public void Insert();
+        public void Input();
         public void Insert(Doctors IN);
         public void Update(long No, Doctors Replace);
         public List<Doctors> GetAll();

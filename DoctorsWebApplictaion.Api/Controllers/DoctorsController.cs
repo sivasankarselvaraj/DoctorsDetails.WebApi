@@ -25,12 +25,7 @@ namespace DoctorsWebApplictaion.Api.Controllers
             return Finish.GetAll();
         }
 
-        // GET api/<DoctorsController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
+       
 
         // POST api/<DoctorsController>
         [HttpPost]

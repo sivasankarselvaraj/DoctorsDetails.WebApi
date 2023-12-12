@@ -10,7 +10,8 @@ namespace DataAccessLayers
 {
    public class DoctorsRepository:IDoctors
     {
-        public void Insert()
+
+        public void Input()
         {
             List<Doctors> DoctorsList = new List<Doctors>();
             Doctors Add = new Doctors();
@@ -34,14 +35,14 @@ namespace DataAccessLayers
 
             }
         }
-        public void Insert(Doctors IN)
+        public void Insert(Doctors add)
         {
             try
             {
                 var Connection = "Data source=DESKTOP-UCPA9BN;initial catalog=batch7;user id=sa;password=Anaiyaan@123;";
                 var Send = new SqlConnection(Connection);
                 Send.Open();
-                var Insert = $"exec InsertProcedure'{IN.DoctorsName}','{IN.Qualification}',{IN.PassoutYear},{IN.PhoneNumber},'{IN.Addresss}'";
+                var Insert = $"exec InsertProcedure'{add.DoctorsName}','{add.Qualification}',{add.PassoutYear},{add.PhoneNumber},'{add.Addresss}'";
                 Send.Execute(Insert);
                 Send.Close();
             }
@@ -54,12 +55,12 @@ namespace DataAccessLayers
 
             }
         }
-        public void Update(long No, Doctors Replace)
+        public void Update(long No, Doctors replace)
         {
             var Connection = "Data source=DESKTOP-UCPA9BN;initial catalog=batch7;user id=sa;password=Anaiyaan@123;";
             var Send = new SqlConnection(Connection);
             Send.Open();
-            var Update = $"exec UpdateProcedure {No},'{Replace.DoctorsName}','{Replace.Qualification}',{Replace.PassoutYear},{Replace.PhoneNumber},'{Replace.Addresss}'";
+            var Update = $"exec UpdateProcedure {No},'{replace.DoctorsName}','{replace.Qualification}',{replace.PassoutYear},{replace.PhoneNumber},'{replace.Addresss}'";
             Send.Execute(Update);
             Send.Close();
         }
@@ -75,12 +76,12 @@ namespace DataAccessLayers
 
         }
 
-        public List<Doctors> Delete(long No)
+        public List<Doctors> Delete(long no)
         {
             var Connection = "Data source=DESKTOP-UCPA9BN;initial catalog=batch7;user id=sa;password=Anaiyaan@123;";
             var Send = new SqlConnection(Connection);
             Send.Open();
-            var Delete = $"exec DeleteProcedure {No}";
+            var Delete = $"exec DeleteProcedure {no}";
 
             var Cut = Send.Query<Doctors>(Delete);
             Send.Close();
