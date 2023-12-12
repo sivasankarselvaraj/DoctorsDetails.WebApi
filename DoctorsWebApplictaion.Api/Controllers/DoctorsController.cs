@@ -36,7 +36,7 @@ namespace DoctorsWebApplictaion.Api.Controllers
         [HttpPost]
         public void Post([FromBody] Doctors value)
         {
-            Finish.Insert();
+            Finish.Insert(value);
         }
 
         // PUT api/<DoctorsController>/5
