@@ -13,7 +13,7 @@ namespace DoctorsWebApplictaion.Api.Controllers
     [ApiController]
     public class DoctorsController : ControllerBase
     {
-        private readonly IDoctors Finish;
+        private readonly IDoctorsRepository Finish;
         // GET: api/<DoctorsController>
         public DoctorsController()
         {

@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayers
 {
-    public interface IDoctors
+    public interface IDoctorsRepository
     {
-        public void Input();
-        public void Insert(Doctors IN);
+       
+        public void Insert(Doctors iN);
         public void Update(long No, Doctors Replace);
         public List<Doctors> GetAll();
-        public List<Doctors> Delete(long no);
+        public void Delete(long no);
     }
 }
